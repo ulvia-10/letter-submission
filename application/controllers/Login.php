@@ -12,17 +12,20 @@ class Login extends CI_Controller
 
         // load model
         $this->load->model('M_login');
+                $this->load->library('form_validation');
     }
 
 
     // main view tampilan
     function index()
     {
-
+        if ($this->session->userdata('username')) {
+            redirect('login');
+        }
         $data = array(
             'namafolder'    => "login",
             'namafileview'  => "V_login",
-            'title'         => "Login Page | Senyum Desa"
+            'title'         => "Login Page | Dinas Pendidikan Jombang"
         );
         // templating
         $this->load->view('templating/login/template_login', $data);
@@ -50,22 +53,23 @@ class Login extends CI_Controller
         $where = array(
             'username' => $username
         );
-
+        
         $dataAkun = $this->M_login->getDataAkun($where);
-
-
+        // echo'<pre>';
+        // var_dump($dataAkun);
+        // echo'</pre>';
         // mengecek isi tabel
         if ($dataAkun->num_rows() > 0) {
 
             // alias
             $row = $dataAkun->row_array();
 
-
             // status account
             if ($row['status_account'] == "active") {
 
                 // pencocokan password
                 if (password_verify($password, $row['password'])) {
+
 
 
                     // add session
@@ -76,6 +80,8 @@ class Login extends CI_Controller
                         'sess_level'        => $row['level'],
                         'sess_foto'         => $row['foto']
                     );
+
+
                     $this->session->set_userdata($data_session);
 
                     // switch case | pencocokan level
@@ -83,61 +89,62 @@ class Login extends CI_Controller
 
                         case 'kepala_cabang':
                             # code... redirect atau link menuju ke ?
-                            redirect('');
+                            redirect('welcome');
                             break;
+
                         case 'kasubag_tu':
                             # code...
-                            redirect('');
+                            echo "Hi Admin";
                             break;
-                        case 'pmk':
-                            # code...
+
+                        case 'pmk':    
+                            echo "Hi Admin";
                             break;
+
                         case 'pma':
-                            # code...
+                            echo "Hi Admin";
                             break;
+
                         case 'staf':
-                                # code...
+                            echo "Hi Admin";
                             break;
+
                         case 'admin':
-                            # code...
+                            echo "Hi Admin";
                             break;
                     }
-
-
-
                     // echo "Bener ". $row['level'];
                 } else {
-
-                    echo "pw salah";
+                    
+                    echo "Mohon maaf Password yang Anda masukkan salah! Mohon coba lagi ";
                     // wrong password
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-primary"><small>Password Salah! </small></div>');
+                    redirect('login');
                 }
             } else {
-
-
+                
                 echo "Akun tidak aktif";
+                //flashdata 
+                $this->session->set_flashdata('pesan', '<div class="alert alert-success"><small>Akun ' . $username . ' tidak aktif </small></div>');
+                redirect('login');
             }
         } else {
-
-            // account not registered
             echo "account not register";
 
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger"><small>Akun ' . $username . ' tidak terdaftar</small></div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger"><small>Akun ' . $username . ' tidak terdaftar</small></div>');
             redirect('login');
         }
 
-
+  
         // bener | not registered | account status | password
     }
-
-
-
 
     // logout
     function logout()
     {
 
         $this->session->sess_destroy();
-
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger"><small>Anda ' . $username . ' Sudah Logout Akun </small></div>');
         redirect('login');
     }
-}
+            }

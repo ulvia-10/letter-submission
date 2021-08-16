@@ -1,5 +1,7 @@
 <?php
+ob_start();
 defined('BASEPATH') or exit('No direct script access allowed');
+date_default_timezone_set('Asia/Jakarta');
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8080/PORTOFOLIO_LINKEDIN/lusi';
+// $config['base_url'] = 'http://localhost:8080/PORTOFOLIO_LINKEDIN/lusi';
+$config['base_url'] = 'http://localhost:8080/letter-submission/';
 
 /*
 |--------------------------------------------------------------------------
