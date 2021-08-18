@@ -12,7 +12,7 @@
         	<meta name="author" content="pixelstrap">
         	<link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
         	<link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
-            <title><?= $title ?></title>
+        	<title><?= $title ?></title>
         	<!-- Google font-->
         	<link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap"
         		rel="stylesheet">
@@ -21,20 +21,26 @@
         		rel="stylesheet">
         	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/frontend/css/fontawesome.css">
         	<!-- ico-font-->
-        	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/frontend/css/vendors/icofont.css">
+        	<link rel="stylesheet" type="text/css"
+        		href="<?php echo base_url() ?>assets/frontend/css/vendors/icofont.css">
         	<!-- Themify icon-->
-        	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/frontend/css/vendors/themify.css">
+        	<link rel="stylesheet" type="text/css"
+        		href="<?php echo base_url() ?>assets/frontend/css/vendors/themify.css">
         	<!-- Flag icon-->
-        	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/frontend/css/vendors/flag-icon.css">
+        	<link rel="stylesheet" type="text/css"
+        		href="<?php echo base_url() ?>assets/frontend/css/vendors/flag-icon.css">
         	<!-- Feather icon-->
-        	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/frontend/css/vendors/feather-icon.css">
+        	<link rel="stylesheet" type="text/css"
+        		href="<?php echo base_url() ?>assets/frontend/css/vendors/feather-icon.css">
         	<!-- Plugins css start-->
         	<!-- Plugins css Ends-->
         	<!-- Bootstrap css-->
-        	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/frontend/css/vendors/bootstrap.css">
+        	<link rel="stylesheet" type="text/css"
+        		href="<?php echo base_url() ?>assets/frontend/css/vendors/bootstrap.css">
         	<!-- App css-->
         	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/frontend/css/style.css">
-        	<link id="color" rel="stylesheet" href="<?php echo base_url() ?>assets/frontend/css/color-1.css" media="screen">
+        	<link id="color" rel="stylesheet" href="<?php echo base_url() ?>assets/frontend/css/color-1.css"
+        		media="screen">
         	<!-- Responsive css-->
         	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/frontend/css/responsive.css">
         </head>
@@ -46,35 +52,10 @@
         	<!-- End Main Content -->
         	<!-- Container-fluid Ends-->
         </div>
-        <script>
-                    (function() {
-                    'use strict';
-                    window.addEventListener('load', function() {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                    }, false);
-                    });
-                    }, false);
-                    })();
-                    <script>
-	     window.setTimeout(function () {
-			$(".alert").fadeTo(500, 0).slideUp(500, function () {
-				$(this).remove();
-			});
-		}, 5000);
 
-	</script>
-                <script src="<?= base_url('assets/frontend/js/theme-plugin.js'); ?>"></script>
-                <script src="<?= base_url('assets/frontend/js/theme-script.js'); ?>"></script>
-                  </script>
+        <script src="<?= base_url('assets/frontend/js/theme-plugin.js'); ?>"></script>
+        <script src="<?= base_url('assets/frontend/js/theme-script.js'); ?>"></script>
+        </script>
         <!-- latest jquery-->
         <script src="<?php echo base_url() ?>assets/frontend/js/jquery-3.5.1.min.js"></script>
         <!-- Bootstrap js-->
@@ -89,5 +70,13 @@
         <!-- Plugins JS Ends-->
         <!-- Theme js-->
         <script src="<?php echo base_url() ?>assets/frontend/js/script.js"></script>
+        <script>
+        	window.setTimeout(function () {
+        		$(".alert").fadeTo(500, 0).slideUp(500, function () {
+        			$(this).remove();
+        		});
+        	}, 5000);
+
+        </script>
         <!-- login js-->
         <!-- Plugin used-->

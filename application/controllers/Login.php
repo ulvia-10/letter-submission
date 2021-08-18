@@ -56,7 +56,7 @@ class Login extends CI_Controller
         
         $dataAkun = $this->M_login->getDataAkun($where);
         // echo'<pre>';
-        // var_dump($dataAkun);
+        // var_dump($username, $password);
         // echo'</pre>';
         // mengecek isi tabel
         if ($dataAkun->num_rows() > 0) {
@@ -66,13 +66,11 @@ class Login extends CI_Controller
 
             // status account
             if ($row['status_account'] == "active") {
-
-                // pencocokan password
+            
+                // // pencocokan password
                 if (password_verify($password, $row['password'])) {
-
-
-
-                    // add session
+                 
+                //     // add session
                     $data_session = array(
 
                         'sess_id_user'      => $row['id_user'],
@@ -81,20 +79,17 @@ class Login extends CI_Controller
                         'sess_foto'         => $row['foto']
                     );
 
-
                     $this->session->set_userdata($data_session);
 
                     // switch case | pencocokan level
                     switch ($row['level']) {
 
                         case 'kepala_cabang':
-                            # code... redirect atau link menuju ke ?
-                            redirect('welcome');
+                            echo "Hi Kepala Cabang";
                             break;
 
                         case 'kasubag_tu':
-                            # code...
-                            echo "Hi Admin";
+                            echo "Hi Kasubag TU ";
                             break;
 
                         case 'pmk':    
@@ -110,10 +105,11 @@ class Login extends CI_Controller
                             break;
 
                         case 'admin':
-                            echo "Hi Admin";
+                            redirect('admin');
+                            // echo "Hi Admin";
                             break;
-                    }
-                    // echo "Bener ". $row['level'];
+                        }
+                  
                 } else {
                     
                     echo "Mohon maaf Password yang Anda masukkan salah! Mohon coba lagi ";
@@ -142,7 +138,6 @@ class Login extends CI_Controller
     // logout
     function logout()
     {
-
         $this->session->sess_destroy();
         $this->session->set_flashdata('pesan', '<div class="alert alert-danger"><small>Anda ' . $username . ' Sudah Logout Akun </small></div>');
         redirect('login');
