@@ -25,8 +25,8 @@ date_default_timezone_set('Asia/Jakarta');
 | a PHP script and you can easily do that on your own.
 |
 */
-// $config['base_url'] = 'http://localhost:8080/PORTOFOLIO_LINKEDIN/lusi';
-$config['base_url'] = 'http://localhost:8080/letter-submission/';
+ $config['base_url'] = 'http://localhost:8080/suratmenyurat/halo/';
+//$config['base_url'] = 'http://localhost:8080/letter-submission/';
 
 /*
 |--------------------------------------------------------------------------

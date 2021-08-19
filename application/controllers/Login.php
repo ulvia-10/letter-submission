@@ -139,7 +139,7 @@ class Login extends CI_Controller
     function logout()
     {
         $this->session->sess_destroy();
-        $this->session->set_flashdata('pesan', '<div class="alert alert-danger"><small>Anda ' . $username . ' Sudah Logout Akun </small></div>');
+        //$this->session->set_flashdata('pesan', '<div class="alert alert-danger"><small>Anda ' . $username . ' Sudah Logout Akun </small></div>');
         redirect('login');
     }
             }

@@ -10,8 +10,8 @@
         	<meta name="keywords"
         		content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
         	<meta name="author" content="pixelstrap">
-        	<link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
-        	<link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
+        	<link rel="icon" href="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" type="image/x-icon">
+        	<link rel="shortcut icon" href="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" type="image/x-icon">
         	<title><?= $title ?></title>
         	<!-- Google font-->
         	<link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap"
@@ -66,6 +66,16 @@
         <!-- scrollbar js-->
         <!-- Sidebar jquery-->
         <script src="<?php echo base_url() ?>assets/frontend//js/config.js"></script>
+		
+		<script src="<?php echo base_url() ?>assets/js/jquery-3.5.1.min.js"></script>
+      <!-- Bootstrap js-->
+      <script src="<?php echo base_url() ?>assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+      <!-- feather icon js-->
+      <script src="<?php echo base_url() ?>assets/js/icons/feather-icon/feather.min.js"></script>
+      <script src="<?php echo base_url() ?>assets/js/icons/feather-icon/feather-icon.js"></script>
+      <!-- scrollbar js-->
+      <!-- Sidebar jquery-->
+      <script src="<?php echo base_url() ?>assets/js/config.js"></script>
         <!-- Plugins JS start-->
         <!-- Plugins JS Ends-->
         <!-- Theme js-->

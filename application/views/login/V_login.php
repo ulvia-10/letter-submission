@@ -2,19 +2,18 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xl-7 order-1"><img class="bg-img-cover bg-center"
-				src="http://admin.pixelstrap.com/cuba/assets/images/login/1.jpg" alt="looginpage"></div>
+				src="<?php echo base_url() ?>assets/images/background/login.gif" alt="looginpage"></div>
 		<div class="col-xl-5 p-0">
 			<div class="login-card">
 				<div>
-					<div><a class="logo text-start" href="#"><img class="img-fluid for-light"
-								src="<?php echo base_url() ?>assets/frontend/img/logo_jombang.png" width="12%"
-								alt="looginpage"><img class="img-fluid for-dark"
-								src="../assets/images/logo/logo_dark.png" alt="looginpage"></a></div>
+					<div><a class="logo text-start" href="#"><center><img class="img-fluid for-light"
+								src="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" width="120px" height="120px"
+								alt="looginpage"></center></a></div>
 					<div class="login-main">
 
 						<form action="<?php echo base_url('login/processLogin') ?>" method="POST">
-							<h4>Sign in to account</h4>
-							<p>Enter your username & password to Login</p>
+							<center><h4>Cabang Dinas Pendidikan Wilayah Kab.Jombang</h4></center>
+							<center><p>Sign in to account</p></center>
 							<?php echo $this->session->flashdata('pesan') ?>
 							<div class="form-group">
 								<label class="col-form-label">Username</label>
@@ -26,7 +25,13 @@
 								<input class="form-control" type="password" name="password" placeholder="Password...">
 							</div> <br>
 							<button class="btn btn-primary btn-block" type="submit">Sign in <i class="fa fa-sign-in" aria-hidden="true"></i></button>
-					</div>
+
+							<h6 class="text-muted mt-4 or">Or Forget Password</h6>
+							<div class="social mt-4">
+								<div class="btn-showcase"><a class="btn btn-info" href="#" target="_blank"><i class="txt-linkedin" data-feather="key"></i> Lupa Password </a></div>
+							</div>
+
+						</div>
 					</form>
 				</div>
 			</div>
