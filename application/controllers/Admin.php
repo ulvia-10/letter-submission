@@ -23,11 +23,11 @@ class Admin extends CI_Controller
         $data = array(
             'namafolder'    => "admin",
             'namafileview'  => "V_dashboard",
-            'title'         => "Admin Page | Dinas Pendidikan Jombang"
+            'title'         => "Admin |Cabdin Jombang"
         );
         // templating
-        $this->load->view('templating/V_header',$data);
-        $this->load->view('templating/V_footer',$data);
+        $this->load->view('templating/admin/template_admin',$data);
+        
     }
 
     function surat()
@@ -35,25 +35,23 @@ class Admin extends CI_Controller
         $data = array(
             'namafolder'    => "admin",
             'namafileview'  => "V_indexadmin",
-            'title'         => "Admin Page | Dinas Pendidikan Jombang"
+            'title'         => "Admin Page | Cabdin Jombang"
         );
         $data['surat_diterima'] = $this->M_surat->getdatasuratrevisi();
         $data['surat_revisi'] = $this->M_surat->getdatasuratrevisi();
         $data['surat_ditolak'] = $this->M_surat->getdatasuratrevisi();
         // templating
-        $this->load->view('templating/V_header',$data);
-        $this->load->view('templating/V_footer',$data);
+        $this->load->view('templating/admin/template_admin',$data);
     }
     function profile()
     {
         $data = array(
             'namafolder'    => "admin",
             'namafileview'  => "V_profile",
-            'title'         => "Admin Page | Dinas Pendidikan Jombang"
+            'title'         => "Admin Page | Cabdin Jombang"
         );
         // templating
-        $this->load->view('templating/V_header',$data);
-        $this->load->view('templating/V_footer',$data);
+        $this->load->view('templating/admin/template_admin',$data);
     }
 }
 ?>

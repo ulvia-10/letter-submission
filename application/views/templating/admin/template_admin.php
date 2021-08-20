@@ -11,8 +11,8 @@
   <meta name="keywords"
     content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
   <meta name="author" content="pixelstrap">
-  <link rel="icon" href="<?php echo base_url() ?>assets/frontend/images/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="<?php echo base_url() ?>assets/frontend/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" type="image/x-icon">
+  <link rel="shortcut icon" href="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" type="image/x-icon">
   <title><?= $title ?></title>
   
   <!-- Google font-->
@@ -129,9 +129,8 @@
                 </div>
               </div>
               <ul class="profile-dropdown onhover-show-div">
-                <li><a href="<?= base_url('adminpusat/profile'); ?>"><i data-feather="settings"></i><span>Edit Profile</span></a></li>
-                <li><a href="<?= base_url('login/changepassword'); ?>"><i data-feather="settings"></i><span>Change Password</span></a></li>
-                <li><a href="<?= base_url('login/logout'); ?>"><i data-feather="log-in"> </i><span>Logout</span></a></li>
+                <li><a href="<?= base_url('adminpusat/profile'); ?>"><i data-feather="user"></i><span>Edit Profile</span></a></li>
+                <li><a href="<?= base_url('login/logout'); ?>"><i data-feather="log-in"></i><span>Logout</span></a></li>
               </ul>
             </li>
           </ul>
