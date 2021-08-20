@@ -221,7 +221,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12 footer-copyright text-center">
-              <p class="mb-0">Copyright <?= date('Y'); ?> Senyum Desa by Luvia </p>
+              <p class="mb-0">Copyright <?= date('Y'); ?> Cabang Dinas Pendidikan Wilayah Kab.Jombang </p>
             </div>
           </div>
         </div>
