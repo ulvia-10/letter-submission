@@ -7,12 +7,12 @@
 			<div class="login-card">
 				<div>
 					<div><a class="logo text-start" href="#"><center><img class="img-fluid for-light"
-								src="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" width="120px" height="120px"
+								src="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" width="80px" height="80px"
 								alt="looginpage"></center></a></div>
 					<div class="login-main">
 
 						<form action="<?php echo base_url('login/processLogin') ?>" method="POST">
-							<center><h4>Cabang Dinas Pendidikan Wilayah Kab.Jombang</h4></center>
+							<center><h4>Cabang Dinas Pendidikan Wilayah Kab. Jombang</h4></center>
 							<center><p>Sign in to account</p></center>
 							<?php echo $this->session->flashdata('pesan') ?>
 							<div class="form-group">

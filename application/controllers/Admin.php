@@ -37,9 +37,9 @@ class Admin extends CI_Controller
             'namafileview'  => "V_indexadmin",
             'title'         => "Admin Page | Dinas Pendidikan Jombang"
         );
-        $data['surat_diterima'] = $this->M_surat->getdatasuratrevisi();
+        $data['surat_diterima'] = $this->M_surat->getdatasuratditerima();
         $data['surat_revisi'] = $this->M_surat->getdatasuratrevisi();
-        $data['surat_ditolak'] = $this->M_surat->getdatasuratrevisi();
+        $data['surat_ditolak'] = $this->M_surat->getdatasuratditolak();
         // templating
         $this->load->view('templating/V_header',$data);
         $this->load->view('templating/V_footer',$data);

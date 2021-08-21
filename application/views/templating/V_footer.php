@@ -222,7 +222,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12 footer-copyright text-center">
-              <p class="mb-0">Copyright <?= date('Y'); ?> Senyum Desa by Luvia </p>
+              <p class="mb-0">Copyright <?= date('Y'); ?> Website by Luvia </p>
             </div>
           </div>
         </div>
