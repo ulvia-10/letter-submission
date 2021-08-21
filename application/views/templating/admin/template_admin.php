@@ -12,7 +12,7 @@
     content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
   <meta name="author" content="pixelstrap">
   <link rel="icon" href="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" type="image/x-icon">
-  <link rel="shortcut icon" href="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" type="image/x-icon">
+        	<link rel="shortcut icon" href="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" type="image/x-icon">
   <title><?= $title ?></title>
   
   <!-- Google font-->
@@ -185,12 +185,27 @@
                                 </li>
 
                                 <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
-                                        href="<?= base_url('admin/profile'); ?>"><i data-feather="user"></i></i><span> Profile </span></a></li>
+                                        href="<?= base_url('admin/datauser'); ?>"><i data-feather="user"></i></i><span>Data User</span></a></li>
+                               
+                                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                        href="<?= base_url('admin/profile'); ?>"><i data-feather="edit"></i></i><span> Profile </span></a></li>
 
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav"
                                         href="<?= base_url('admin/surat'); ?>"><i data-feather="archive">
-                                        </i><span>Surat</span></a>
+                                        </i><span>Surat Masuk</span></a>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title link-nav"
+                                        href="<?= base_url('admin/surat'); ?>"><i data-feather="folder">
+                                        </i><span>Surat Keluar</span></a>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title link-nav"
+                                        href="<?= base_url('admin/surat'); ?>"><i data-feather="file">
+                                        </i><span>Contoh Surat</span></a>
                                 </li>
 
                             
