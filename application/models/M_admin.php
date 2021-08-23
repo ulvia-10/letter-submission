@@ -67,7 +67,7 @@ class M_admin extends CI_Model
          $config['upload_path'] = './assets/images/';
          $config['allowed_types'] = 'jpg|png|jpeg';
          $this->load->library('upload', $config);
-         if ($this->upload->do_upload('foto')) {
+         if ($this->upload->do_upload('photo')) {
              $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
              return $return;
          } else {
