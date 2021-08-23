@@ -108,6 +108,10 @@ class Login extends CI_Controller
                             redirect('admin');
                             // echo "Hi Admin";
                             break;
+
+                        case 'super_admin';
+                            redirect('superadmin');
+                            break;
                         }
                   
                 } else {

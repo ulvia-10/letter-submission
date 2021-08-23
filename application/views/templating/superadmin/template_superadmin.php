@@ -53,17 +53,18 @@
 
 <body onload="startTime()">
 	<!-- Loading -->
-	<div class="loader-wrapper">
+	<!-- <div class="loader-wrapper">
 		<div class="loader-index"><span></span></div>
 		<svg>
 			<defs></defs>
 			<filter id="goo">
 				<fegaussianblur in="SourceGraphic" stddeviation="11" result="blur"></fegaussianblur>
-				<fecolormatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"> </fecolormatrix>
+				<fecolormatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo">
+				</fecolormatrix>
 			</filter>
 		</svg>
-	</div>
-	<!-- tap on top starts-->
+	</div> -->
+	<!-- tap on top starts -->
 	<div class="tap-top"><i data-feather="chevrons-up"></i></div>
 	<!-- tap on tap ends-->
 	<!-- page-wrapper Start-->
@@ -77,7 +78,8 @@
 							<div class="u-posRelative">
 								<input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
 									placeholder="Search Cuba .." name="q" title="" autofocus>
-								<div class="spinner-border Typeahead-spinner" role="status"><span class="sr-only">Loading...</span>
+								<div class="spinner-border Typeahead-spinner" role="status"><span
+										class="sr-only">Loading...</span>
 								</div><i class="close-search" data-feather="x"></i>
 							</div>
 							<div class="Typeahead-menu"></div>
@@ -85,13 +87,11 @@
 					</div>
 				</form>
 
-				<!--**********************************
-           Start Navbar (gak dippakai tapi jangan dibuang)
-        ***********************************-->
 				<div class="header-logo-wrapper col-auto p-0">
 					<div class="logo-wrapper"><a href="index.html"><img class="img-fluid"
 								src="<?php echo base_url() ?>assets/frontend/images/logo/logo.png" alt=""></a></div>
-					<div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
+					<div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle"
+							data-feather="align-center"></i>
 					</div>
 				</div>
 				<div class="left-header col horizontal-wrapper ps-0">
@@ -106,29 +106,32 @@
 					<ul class="nav-menus">
 
 
-
 						<li>
 							<div class="mode"><i class="fa fa-moon-o"></i></div>
 						</li>
 
 						<li>
-							<div><a href="<?= base_url('Login/logout'); ?>"><i data-feather="log-in"></i></a></div>
+							<div><a href="<?= base_url('login/logout'); ?>"><i data-feather="log-in"></i></a></div>
 						</li>
 
 						<li class="maximize"><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i
 									data-feather="maximize"></i></a></li>
 						<li class="profile-nav onhover-dropdown p-0 me-0">
 							<div class="media profile-media"><img class="b-r-10" width="40px" height="40px"
-									src="<?php echo base_url('assets/images/' . $this->session->userdata('sess_foto')) ?>" alt="">
-								<div class="media-body"><span><?php echo $this->session->userdata('sess_fullname') ?></span>
+									src="<?php echo base_url('assets/images/' . $this->session->userdata('sess_foto')) ?>"
+									alt="">
+								<div class="media-body">
+									<span><?php echo $this->session->userdata('sess_fullname') ?></span>
 									<p class="mb-0 font-roboto"><?php echo $this->session->userdata('sess_level') ?><i
 											class="middle fa fa-angle-down"></i></p>
 								</div>
 							</div>
 							<ul class="profile-dropdown onhover-show-div">
-								<li><a href="<?= base_url('adminpusat/profile'); ?>"><i data-feather="user"></i><span>Edit
+								<li><a href="<?= base_url('adminpusat/profile'); ?>"><i
+											data-feather="user"></i><span>Edit
 											Profile</span></a></li>
-								<li><a href="<?= base_url('login/logout'); ?>"><i data-feather="log-in"></i><span>Logout</span></a></li>
+								<li><a href="<?= base_url('login/logout'); ?>"><i
+											data-feather="log-in"></i><span>Logout</span></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -154,19 +157,22 @@
 				<div>
 					<div class="logo-wrapper"><a href="#"><img class="img-fluid for-light"
 								src="<?php echo base_url() ?>assets/frontend/images/logo/logo.gif" alt=""><img
-								class="img-fluid for-dark" src="<?php echo base_url() ?>assets/frontend/images/logo/logo_dark.gif"
-								alt=""></a>
+								class="img-fluid for-dark"
+								src="<?php echo base_url() ?>assets/frontend/images/logo/logo_dark.gif" alt=""></a>
 						<div class="back-btn"><i class="fa fa-angle-left"></i></div>
-						<div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
+						<div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid">
+							</i></div>
 					</div>
 					<div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid"
-								src="<?php echo base_url() ?>assets/frontend/images/logo/logo-icon.png" alt=""></a></div>
+								src="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" width=30px;></a>
+					</div>
 					<nav class="sidebar-main">
 						<div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
 						<div id="sidebar-menu">
 							<ul class="sidebar-links" id="simple-bar">
 								<li class="back-btn"><a href="index.html"><img class="img-fluid"
-											src="<?php echo base_url() ?>assets/frontend/images/logo/logo-icon.png" alt=""></a>
+											src="<?php echo base_url() ?>assets/frontend/images/logo/logo-icon.png"
+											alt=""></a>
 									<div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2"
 											aria-hidden="true"></i></div>
 								</li>
@@ -180,45 +186,17 @@
 								</li>
 
 								<li class="sidebar-list">
-									<a class="sidebar-link " href="<?= base_url('admin'); ?>"><i data-feather="home"></i><span
-											class="lan-3">Dashboard </span></a>
+									<a class="sidebar-link " href="<?= base_url('superadmin'); ?>"><i
+											data-feather="home"></i><span class="lan-3">Dashboard </span></a>
 								</li>
 
 								<li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
-										href="<?= base_url('admin/datauser'); ?>"><i data-feather="user"></i></i><span>Data User</span></a>
-								</li>
-
-								<li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
-										href="<?= base_url('admin/profile'); ?>"><i data-feather="edit"></i></i><span> Profile </span></a>
-								</li>
-
-								<li class="sidebar-list">
-									<a class="sidebar-link sidebar-title link-nav" href="<?= base_url('admin/surat'); ?>"><i
-											data-feather="archive">
-										</i><span>Surat Masuk</span></a>
-								</li>
-
-								<li class="sidebar-list">
-									<a class="sidebar-link sidebar-title link-nav" href="<?= base_url('admin/suratkeluar'); ?>"><i
-											data-feather="folder">
-										</i><span>Surat Keluar</span></a>
-								</li>
-
-								<li class="sidebar-list">
-									<a class="sidebar-link sidebar-title link-nav" href="<?= base_url('admin/surat'); ?>"><i
-											data-feather="file">
-										</i><span>Contoh Surat</span></a>
+										href="<?= base_url('superadmin/datauser'); ?>"><i
+											data-feather="user"></i></i><span>Data User</span></a>
 								</li>
 
 
 
-								<li class="sidebar-main-title">
-
-								</li>
-
-								<li class="sidebar-main-title">
-
-								</li>
 
 							</ul>
 						</div>
@@ -233,7 +211,7 @@
 				<!-- End Main Content -->
 				<!-- Container-fluid Ends-->
 			</div>
-      
+
 			<!-- footer start-->
 			<footer class="footer">
 				<div class="container-fluid">
@@ -250,7 +228,8 @@
 
 	<!-- latest jquery-->
 	<script src="<?php echo base_url() ?>assets/frontend/js/datepicker/date-time-picker/moment.min.js"></script>
-	<script src="<?php echo base_url() ?>assets/frontend/js/datepicker/date-time-picker/tempusdominus-bootstrap-4.min.js">
+	<script
+		src="<?php echo base_url() ?>assets/frontend/js/datepicker/date-time-picker/tempusdominus-bootstrap-4.min.js">
 	</script>
 	<script src="<?php echo base_url() ?>assets/frontend/js/datepicker/date-time-picker/datetimepicker.custom.js">
 	</script>

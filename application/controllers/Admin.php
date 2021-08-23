@@ -34,6 +34,7 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('pesan', '<div class="alert alert-warning"><b>Pemberitahuan</b> <br> <small>Maaf anda harus login terlebih dahulu</small></div>');
         redirect('login');
       }
+      
 
     }
 
@@ -79,11 +80,11 @@ class Admin extends CI_Controller
   
         //hapus akun
             public function delete($id_user)
-        {
-          $this->M_admin->hapusdataakun($id_user);
-          $this->session->set_flashdata('akun', 'Akun berhasil Dihapus');
-          redirect('Admin/datauser', 'refresh');
-        }
+              {
+                $this->M_admin->hapusdataakun($id_user);
+                $this->session->set_flashdata('akun', 'Akun berhasil Dihapus');
+                redirect('Admin/datauser', 'refresh');
+              }
 
          // Tambah AKun 
          public function tambah()
@@ -105,8 +106,7 @@ class Admin extends CI_Controller
          // Proses Tambah Akun
          function prosesTambah()
          {
- 
-           // print_r( $this->input->post() );
+
            $this->load->helper(array('form', 'url'));
            $this->load->library('form_validation');
  
@@ -127,6 +127,7 @@ class Admin extends CI_Controller
                echo $upload['error'];
              }
            }
+
          }
 
         //edit akun
@@ -155,9 +156,6 @@ class Admin extends CI_Controller
           } else {
             // #code...
             $this->M_admin->editdata();
-            // echo "<pre>";
-            // echo var_dump($data);
-            // echo "</pre>";
           }
         }
 
@@ -211,6 +209,7 @@ class Admin extends CI_Controller
         $this->load->view('templating/admin/template_admin',$data);
     }
     function proseseditakun(){
+      
         // set form validation
         $this->form_validation->set_rules('full_name','full_name','required');
         $this->form_validation->set_rules('email','email','required');

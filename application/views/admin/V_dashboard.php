@@ -112,11 +112,6 @@
             </div>
         </div>
 
-
-      
-
-
-
         <div class="col-xl-4 col-lg-12 xl-50 calendar-sec box-col-6">
             <div class="card gradient-primary o-hidden">
                 <div class="card-body">
