@@ -36,10 +36,6 @@ class M_admin extends CI_Model
      //tambahakun
      public function tambahdataakun($upload)
      {
- 
- 
-         //$id_user = $this->session->userdata('sess_id');
- 
          // password hash 
          $password = password_hash($this->input->post('password'), PASSWORD_BCRYPT);
  
@@ -53,14 +49,17 @@ class M_admin extends CI_Model
              'status_account'   => $this->input->post('status_account'),
              'photo'  => $upload['file']['file_name']
          );
-         // execute database
+        //  echo '<pre>';
+        //  var_dump($data);
+        //  echo'</pre>';
+        //  execute database
          $this->db->insert('user', $data);
  
          //flashdata 
          $elementHTML = '<div class="alert alert-primary alert-dismissible fade show"><br> Akun berhasil ditambahkan pada ' . date('d F Y H.i A') . '</div>';
          $this->session->set_flashdata('akun', $elementHTML);
  
-         redirect('Admin/datauser');
+         redirect('admin/datauser');
      }
      //upload akun tambah foto
      public function upload()
@@ -68,7 +67,7 @@ class M_admin extends CI_Model
          $config['upload_path'] = './assets/images/';
          $config['allowed_types'] = 'jpg|png|jpeg';
          $this->load->library('upload', $config);
-         if ($this->upload->do_upload('photo')) {
+         if ($this->upload->do_upload('foto')) {
              $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
              return $return;
          } else {
@@ -83,7 +82,7 @@ class M_admin extends CI_Model
         $id_user = $this->input->post('id_user');
         
         $data = [
-
+            'id_user'      =>$id_user,
             'full_name'    => $this->input->post('full_name', true),
             'email'         => $this->input->post('email', true),
             'level'        => $this->input->post('level', true),
@@ -97,26 +96,14 @@ class M_admin extends CI_Model
         $msg = '<div class="alert alert-info">Akun berhasil  diperbarui <br><small>Pada tanggal ' . date('d F Y H.i A') . '</small></div>';
         $this->session->set_flashdata('akun', $msg);
         //redirect
-        redirect('Admin/edit/' . $id_user);
-
-        //Mencari eror
-        //print_r($data);
-
-        //
-        //var_dump($data,$dataInformasiProfile);
+        redirect('admin/edit/' . $id_user);
     }
 
      //Detail  Informasi Akun mengambil id_profile pada saat edit profile
      public function getEditProfileByID($id_user)
      {
  
-         // $sql = "SELECT a.id_profile,b.id_cabang,b.name_cabang,c.telp,c.address,c.email,a.full_name,a.username,a.tempat_lahir,a.tanggal_lahir,a.asal,a.gender,a.level,a.status_account
-         //     FROM akun_profile a, master_cabang b , data_informasiprofile c
-         //     where a.id_cabang = b.id_cabang AND a.id_profile = '$id_user'";
- 
-         // return $this->db->query($sql)->row_array();
- 
-         //$id_user = $this->session->userdata('sess_id_profile');
+    
          $sql = "SELECT * FROM user";
  
          return $this->db->query($sql)->row_array();

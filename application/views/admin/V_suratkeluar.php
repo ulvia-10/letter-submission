@@ -4,11 +4,11 @@
 	<div class="col-xl-6 xl-100 col-lg-12 box-col-12">
 		<div class="card">
 			<div class="card-header">
-				<h5 class="pull-left">Data Surat Masuk</h5>
+				<h5 class="pull-left">Data Surat Keluar</h5>
 			</div>
 			<div class="card-body">
 				<div class="tabbed-card">
-					<ul class="pull-right nav nav-pills nav-primary" id="pills-clrtab1" role="tablist">
+					<ul class="pull-right nav nav-pills nav-success" id="pills-clrtab1" role="tablist">
 						<li class="nav-item"><a class="nav-link active" id="pills-clrhome-tab1" data-bs-toggle="pill"
 								href="#pills-clrhome1" role="tab" aria-controls="pills-clrhome1" aria-selected="true">
 								<i class="fa fa-check-circle" aria-hidden="true"></i> Diterima</a></li>
@@ -27,7 +27,7 @@
 							aria-labelledby="pills-clrhome-tab1">
 							<?php echo $this->session->flashdata('pesan') ?>
 							<a href="<?= base_url(); ?>keuangan/tambahbuktikaskorwil/"
-								class="btn btn-primary btn-sm mb-3">
+								class="btn btn-success btn-sm mb-3">
 								<i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a> <br>
 							<table class="display" id="basic-3" style="text-align:center;">
 								<thead>
@@ -43,13 +43,13 @@
 								</thead>
 								<tbody>
 									<?php $no = 1;
-									  foreach ($surat_diterima AS $drm) { ?>
+									  foreach ($suratkeluar_diterima AS $drm) { ?>
 									<tr>
 										<td><?=$no++?></td>
 										<td><?= date('d-M-Y',strtotime($drm['tgl_diterima']))?></td>
 										<td><?=$drm['no_surat']?></td>
 										<td><span class="badge badge-primary"><?=$drm['jenis_surat']?></td></span>
-										<td><span class="badge badge-success"><?=$drm['sifat']?></td></span>
+										<td><?=$drm['sifat']?></td>
 										<td>
 											<!-- detail -->
 											<a href="<?= base_url(); ?>surat/detailsurat/<?= $drm['id_surat'];?>"
@@ -124,7 +124,7 @@
 								</thead>
 								<tbody>
 									<?php $no = 1;
-										  foreach ($surat_revisi AS $rvs) { ?>
+										  foreach ($suratkeluar_revisi AS $rvs) { ?>
 									<tr>
 										<td><?=$no++?></td>
 										<td><?= date('d-M-Y',strtotime($rvs['tgl_diterima']))?></td>
@@ -205,7 +205,7 @@
 								</thead>
 								<tbody>
 									<?php $no = 1;
-									  foreach ($surat_ditolak AS $dtk) { ?>
+									  foreach ($suratkeluar_ditolak AS $dtk) { ?>
 									<td><?=$no++?></td>
 									<td><?= date('d-M-Y',strtotime($dtk['tgl_diterima']))?></td>
 									<td><?=$dtk['no_surat']?></td>

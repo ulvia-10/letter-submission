@@ -12,11 +12,42 @@ class M_surat extends CI_Model
         return $this->db->query($sql)->result_array();
       
     }
-    function getdatasuratrevisi()
+    // untuk surat masuk 
+    function getdatasuratmasukditerima()
     {
-        $sql="SELECT * FROM surat WHERE validasi_surat='diterima'";
+        $sql="SELECT * FROM surat WHERE validasi_surat='diterima' AND gol_surat='masuk'";
         return $this->db->query($sql)->result_array();
       
+    }
+    function getdatasuratmasukrevisi()
+    {
+        $sql="SELECT * FROM surat WHERE validasi_surat='revisi'AND gol_surat='masuk'";
+        return $this->db->query($sql)->result_array();
+      
+    }
+
+    function getdatasuratmasukditolak()
+    {
+        $sql="SELECT * FROM surat WHERE validasi_surat='ditolak'AND gol_surat='masuk'";
+        return $this->db->query($sql)->result_array();
+      
+    }
+
+
+    // untuk surat keluar 
+    function getdatasuratkeluarditerima(){
+        $sql="SELECT * FROM surat WHERE validasi_surat='diterima'AND gol_surat='keluar'";
+        return $this->db->query($sql)->result_array();
+    }
+
+    function getdatasuratkeluarrevisi(){
+        $sql="SELECT * FROM surat WHERE validasi_surat='revisi'AND gol_surat='keluar'";
+        return $this->db->query($sql)->result_array();
+    }
+
+    function getdatasuratkeluarditolak(){
+        $sql="SELECT * FROM surat WHERE validasi_surat='ditolak'AND gol_surat='keluar'";
+        return $this->db->query($sql)->result_array();
     }
    
 }

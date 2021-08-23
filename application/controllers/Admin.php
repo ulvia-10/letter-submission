@@ -44,16 +44,24 @@ class Admin extends CI_Controller
         $data = array(
             'namafolder'    => "admin",
             'namafileview'  => "V_dashboard",
-            'title'         => "Admin |Cabdin Jombang"
+            'title'         => "Admin | Cabdin Jombang"
         );
         // templating
         $this->load->view('templating/admin/template_admin',$data);
         
     }
-    //--------- **** Code By End Dashboard Admin **** -------------///////////////////////
-
-    //--------- **** Code By start Data User Admin **** -------------///////////////////////
-    
+    // detail
+    function detail()
+    {
+        $data = array(
+            'namafolder'    => "admin",
+            'namafileview'  => "V_detailuser",
+            'title'         => "Admin | Cabdin Jombang"
+        );
+        // templating
+        $this->load->view('templating/admin/template_admin',$data);
+        
+    }
     // Tabel data akun  User
     function datauser(){
           $data = array(
@@ -65,6 +73,7 @@ class Admin extends CI_Controller
 
           //disesuaikan sama dengan nama view$ 
           $data['akun'] = $this->M_admin->get_dataakun();
+
           $this->load->view('templating/admin/template_admin', $data);
         }
   
@@ -107,8 +116,6 @@ class Admin extends CI_Controller
            $this->form_validation->set_rules('email', 'email', 'trim|required');
  
            if ($this->form_validation->run() == FALSE) {
- 
-             // $this->tambah();
              echo validation_errors();
            } else {
              $upload = $this->M_admin->upload();
@@ -127,7 +134,7 @@ class Admin extends CI_Controller
         {
 
           $editprofile =  $this->M_admin->getEditProfileByID($id_user);
-
+          
           $data = array(
 
             'namafolder'	=> "admin",
@@ -137,7 +144,6 @@ class Admin extends CI_Controller
             // // variable
             'user'      => $editprofile
           );
-
           $this->form_validation->set_rules('full_name', 'fullName', 'trim|required');
           $this->form_validation->set_rules('username', 'username', 'trim|required');
           $this->form_validation->set_rules('password', 'password', 'trim|required');
@@ -145,15 +151,10 @@ class Admin extends CI_Controller
 
           if ($this->form_validation->run() == FALSE) {
             #code...    
-            //$data['profile'] = $this->M_dataakun->getProfileByID($id);
             $this->load->view('templating/admin/template_admin', $data);
-            //print_r($data);
-            // echo "<pre>";
-            // echo var_dump($data);
-            // echo "</pre>";
           } else {
             // #code...
-            //$this->M_pusat->editdata();
+            $this->M_admin->editdata();
             // echo "<pre>";
             // echo var_dump($data);
             // echo "</pre>";
@@ -175,12 +176,30 @@ class Admin extends CI_Controller
             'namafileview'  => "V_indexadmin",
             'title'         => "Admin Page | Cabdin Jombang"
         );
-        $data['surat_diterima'] = $this->M_surat->getdatasuratrevisi();
-        $data['surat_revisi'] = $this->M_surat->getdatasuratrevisi();
-        $data['surat_ditolak'] = $this->M_surat->getdatasuratrevisi();
+        $data['surat_diterima'] = $this->M_surat->getdatasuratmasukditerima();
+        $data['surat_revisi'] = $this->M_surat->getdatasuratmasukrevisi();
+        $data['surat_ditolak'] = $this->M_surat->getdatasuratmasukditolak();
         // templating
         $this->load->view('templating/admin/template_admin',$data);
     }
+
+
+    
+    function suratkeluar()
+    {
+        $data = array(
+            'namafolder'    => "admin",
+            'namafileview'  => "V_suratkeluar",
+            'title'         => "Admin Page | Cabdin Jombang"
+        );
+        $data['suratkeluar_diterima'] = $this->M_surat->getdatasuratkeluarditerima();
+        $data['suratkeluar_revisi'] = $this->M_surat->getdatasuratkeluarrevisi();
+        $data['suratkeluar_ditolak'] = $this->M_surat->getdatasuratkeluarditolak();
+        // templating
+        $this->load->view('templating/admin/template_admin',$data);
+    }
+
+
     function profile()
     {
         $data = array(
@@ -190,6 +209,22 @@ class Admin extends CI_Controller
         );
         // templating
         $this->load->view('templating/admin/template_admin',$data);
+    }
+    function proseseditakun(){
+        // set form validation
+        $this->form_validation->set_rules('full_name','full_name','required');
+        $this->form_validation->set_rules('email','email','required');
+        $this->form_validation->set_rules('level','level','required');
+        $this->form_validation->set_rules('status_account','status_account','required');
+    
+        // check process form validation 
+        if ($this->form_validation->run() == FALSE){
+            echo validation_errors();
+          }
+          else{
+                $this->M_admin->editdata();
+                redirect('superadmin/eventdonasi','refresh');
+        }
     }
 }
 ?>

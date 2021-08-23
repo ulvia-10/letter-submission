@@ -1,28 +1,11 @@
+<br><br>
 <div class="container-fluid">
-    <div class="page-title">
-        <div class="row">
-            <div class="col-6">
-                <h3>Data Akun</h3>
-            </div>
-            <div class="col-6">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#"> <i data-feather="home"></i></a></li>
-                    <li class="breadcrumb-item">Data Tables</li>
-                    <li class="breadcrumb-item active">Tambah Data Akun</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Container-fluid starts-->
-
 
 <div class="card">
     <div class="card-header">
         <h5>Tambah Akun Baru</h5>
     </div>
-    <form class="form theme-form" action="<?php echo base_url('Admin/prosesTambah') ?>" method="POST"
-        enctype="multipart/form-data">
+    <form class="form theme-form" action="<?php echo base_url('admin/prosesTambah') ?>" method="POST" enctype="multipart/form-data">
         <div class="card-body">
             <div class="row">
                 <div class="col">
@@ -60,7 +43,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label" id="photo">Pas Foto</label>
+                                <label class="col-sm-3 col-form-label" id="foto">Pas Foto</label>
                                 <div class="col-sm-9">
                                     <input class="form-control" type="file" name="photo" required="" id="photo">
                                 </div>
@@ -116,24 +99,4 @@
         </div>
     </form>
 </div>
-
-<!-- <script>
-	let elementWilayah = $('#element-wilayah');
-
-	// sembunyikan
-	elementWilayah.hide();
-
-	// perintah event on click
-	$('input[name="level"]').change(function () {
-
-
-		if (this.value == "pusat") {
-
-			elementWilayah.fadeOut();
-		} else {
-
-			elementWilayah.fadeIn();
-		}
-	})
-
-</script> -->
+</div>

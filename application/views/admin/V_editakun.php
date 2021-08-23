@@ -1,20 +1,5 @@
 <div class="container-fluid">
-    <div class="page-title">
-        <div class="row">
-            <div class="col-6">
-                <h3>Data Akun</h3>
-            </div>
-            <div class="col-6">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"> <i data-feather="home"></i></a></li>
-                    <li class="breadcrumb-item">Data Tables</li>
-                    <li class="breadcrumb-item active">Edit Data Akun</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Container-fluid starts-->
+ <br><br>
 
 
 <div class="card">
@@ -22,11 +7,11 @@
         <h5>Edit Data Akun</h5> <br>
         <?php echo $this->session->flashdata('akun') ?>
     </div>
-    <form class="form theme-form" method="POST" action="<?php echo site_url('Admin/edit');?>" >
+    <form class="form theme-form" method="POST" action="<?php echo site_url('admin/proseseditakun/'.$user['id_user']);?>" >
         <div class="card-body">
             <div class="row">
                 <div class="col">
-                   
+                <input type="hidden" name="id_user" value="<?= $user['id_user']; ?>">
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Full Name</label>
                         <div class="col-sm-9">
@@ -93,4 +78,5 @@
             </div>
         </div>
     </form>
+</div>
 </div>

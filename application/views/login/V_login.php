@@ -2,17 +2,16 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xl-7 order-1"><img class="bg-img-cover bg-center"
-				src="<?php echo base_url() ?>assets/images/background/login.gif" alt="looginpage"></div>
+				src="<?php echo base_url() ?>assets/images/background/login.gif" alt="loginpage"></div>
 		<div class="col-xl-5 p-0">
 			<div class="login-card">
 				<div>
 					<div><a class="logo text-start" href="#"><center><img class="img-fluid for-light"
-								src="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" width="120px" height="120px"
+								src="<?php echo base_url() ?>assets/images/logo/images-3.jpeg" width="70px" height="70px"
 								alt="looginpage"></center></a></div>
 					<div class="login-main">
-
 						<form action="<?php echo base_url('login/processLogin') ?>" method="POST">
-							<center><h4>Cabang Dinas Pendidikan Wilayah Kab.Jombang</h4></center>
+							<center><h5>Cabang Dinas Pendidikan Wilayah Kab.Jombang</h5></center>
 							<center><p>Sign in to account</p></center>
 							<?php echo $this->session->flashdata('pesan') ?>
 							<div class="form-group">

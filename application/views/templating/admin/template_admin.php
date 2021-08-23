@@ -198,7 +198,7 @@
 
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav"
-                                        href="<?= base_url('admin/surat'); ?>"><i data-feather="folder">
+                                        href="<?= base_url('admin/suratkeluar'); ?>"><i data-feather="folder">
                                         </i><span>Surat Keluar</span></a>
                                 </li>
 
