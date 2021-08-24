@@ -185,14 +185,19 @@
 
 								</li>
 
-								<li class="sidebar-list">
+								<!-- <li class="sidebar-list">
 									<a class="sidebar-link " href="<?= base_url('superadmin'); ?>"><i
 											data-feather="home"></i><span class="lan-3">Dashboard </span></a>
-								</li>
+								</li> -->
 
 								<li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
 										href="<?= base_url('superadmin/datauser'); ?>"><i
 											data-feather="user"></i></i><span>Data User</span></a>
+								</li>
+								
+								<li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+										href="<?= base_url('login/logout'); ?>"><i
+											data-feather="log-out"></i></i><span>Log Out</span></a>
 								</li>
 
 

@@ -110,15 +110,15 @@ class Superadmin extends CI_Controller
             }
     }
 
-    function detailuser(){
+    function detailuser($id_user){
 
         $data = array(
             'namafolder'    => "superadmin",
             'namafileview'  => "V_detailuser",
             'title'         => "Superadmin Page | Dinas Pendidikan Jombang"
         );
-        $data['user'] = $this->M_superadmin->get_datauser();
-        // templating
+        $data['user'] = $this->M_superadmin->getEditProfileByID($id_user);
+        // templatingget_datauser
         $this->load->view('templating/superadmin/template_superadmin', $data);
     }
 

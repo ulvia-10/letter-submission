@@ -3,7 +3,7 @@
 	<div class="col-sm-12">
 		<div class="card">
 			<div class="card-header">
-				<h5>Data Akun</h5>
+				<h5>Data Akun <i class="fa fa-user-circle" aria-hidden="true"></i> </h5>
 			</div>
 			<div class="card-body">
 
