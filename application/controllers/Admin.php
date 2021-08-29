@@ -50,18 +50,7 @@ class Admin extends CI_Controller
         $this->load->view('templating/admin/template_admin',$data);
         
     }
-    // detail
-    function detail()
-    {
-        $data = array(
-            'namafolder'    => "admin",
-            'namafileview'  => "V_detailuser",
-            'title'         => "Admin | Cabdin Jombang"
-        );
-        // templating
-        $this->load->view('templating/admin/template_admin',$data);
-        
-    }
+
     // Tabel data akun  User
     function datauser(){
           $data = array(
@@ -165,6 +154,18 @@ class Admin extends CI_Controller
         public function editprofile(){
           $this->M_admin->editdata();
       } 
+
+      //detailakun
+      public function detail($id_user)
+      {
+        $data = array(
+          'namafolder'	=> "admin",
+          'namafileview'	=> "V_detailuser",
+          'title'         => "Informasi Akun | Cabdin Jombang"
+        );
+        $data['user'] = $this->M_admin->getProfileByID($id_user);
+        $this->load->view('templating/admin/template_admin', $data);
+      }
 
         //--------------  *** End Data Akun ****/--------------------------------------------------------//
     
