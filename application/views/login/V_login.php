@@ -27,7 +27,7 @@
 
 							<h6 class="text-muted mt-4 or">Or Forget Password</h6>
 							<div class="social mt-4">
-								<div class="btn-showcase"><a class="btn btn-info" href="#" target="_blank"><i class="txt-linkedin" data-feather="key"></i> Lupa Password </a></div>
+								<div class="btn-showcase"><a class="btn btn-info" href="<?php echo base_url('login/forgetpassword') ?>" target="_blank"><i class="txt-linkedin" data-feather="key"></i> Lupa Password </a></div>
 							</div>
 
 						</div>

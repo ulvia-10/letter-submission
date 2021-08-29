@@ -36,6 +36,7 @@ class Login extends CI_Controller
         $data = array(
             'namafolder' => "login",
             'namafileview' => "V_forgetpassword",
+<<<<<<< HEAD
             'title'      => "Email Page Forget Password  | Dinas Pendidikan Jombang"
         );
          // templating
@@ -44,14 +45,20 @@ class Login extends CI_Controller
 
     function emailforgetpassword(){
         
+=======
+            'title'         => "Forget Password Page | Dinas Pendidikan Jombang"
+        );
+        $this->load->view('templating/login/template_login',$data);
+        // $this->load->view('templating/template_loginheader', $data);
+        // $this->load->view('templating/template_loginfooter', $data);
+>>>>>>> 1e66f8f962fe3665ea770465865c53a0107f4140
     }
 
     // process login
+
     function processLogin()
     {
 
-        //echo "Hello";
-        // from view
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
@@ -60,9 +67,7 @@ class Login extends CI_Controller
         );
         
         $dataAkun = $this->M_login->getDataAkun($where);
-        // echo'<pre>';
-        // var_dump($username, $password);
-        // echo'</pre>';
+     
         // mengecek isi tabel
         if ($dataAkun->num_rows() > 0) {
 
@@ -111,7 +116,10 @@ class Login extends CI_Controller
 
                         case 'admin':
                             redirect('admin');
-                            // echo "Hi Admin";
+                            break;
+
+                        case 'super_admin';
+                            redirect('superadmin');
                             break;
                         }
                   

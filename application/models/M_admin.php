@@ -11,7 +11,7 @@ class M_admin extends CI_Model
      public function get_dataakun()
      {
  
-         $query = $this->db->query('SELECT * FROM user');
+         $query = $this->db->query('SELECT * FROM user where level != "super_admin"');
          return $query;
      }
 

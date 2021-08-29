@@ -5,7 +5,7 @@
     <div class="card-header">
         <h5>Tambah Akun Baru</h5>
     </div>
-    <form class="form theme-form" action="<?php echo base_url('admin/prosesTambah') ?>" method="POST" enctype="multipart/form-data">
+    <form class="form theme-form" action="<?php echo base_url('superadmin/prosesTambahUser') ?>" method="POST" enctype="multipart/form-data">
         <div class="card-body">
             <div class="row">
                 <div class="col">
@@ -55,7 +55,7 @@
                         <label class="col-sm-3 col-form-label">Level</label>
                         <div class="col-sm-9">
                         <select class="form-select" name="level" id="level">
-                            <!-- <option value="admin">Admin</option> -->
+                            <option value="admin">Admin</option>
                             <option value="kepala_cabang">Kepala Cabang</option>
                             <option value="kasubag_tu">Kasubag Tata Usaha</option>
                             <option value="pma">Kepala Seksi SMA</option>
@@ -94,7 +94,7 @@
            <center>
                 <button class="btn btn-primary" type="submit">Tambah</button>
                 <input class="btn btn-warning" type="reset" value="Reset">
-                <a href="<?= base_url('Admin/datauser'); ?>" class="btn btn-light" type="submit">Cancel</a>
+                <a href="<?= base_url('superadmin/datauser'); ?>" class="btn btn-light" type="submit">Cancel</a>
           </center>
         </div>
     </form>
