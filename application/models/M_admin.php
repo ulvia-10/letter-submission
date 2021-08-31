@@ -109,16 +109,69 @@ class M_admin extends CI_Model
      }
 
      //detail akun
-     public function getProfileByID($id_profile)
+     public function getProfileByID($id_user)
      {
  
-        $sql = "SELECT * FROM user";
+        $sql = "SELECT * FROM user
+        WHERE user.id_user = '$id_user'
+        ";
  
         return $this->db->query($sql)->row_array();
      }
-
-     
- 
     //--------------  *** end model Tabel Akun Admin ****/--------------------------------------------------------//
 
+  //--------------  *** start  model Tabel Akun profile ****/--------------------------------------------------------//
+    
+    // Menampilkan isi informasi profile
+  public function getproseseditProfileByID()
+    {
+
+        $id_profile = $this->session->userdata('sess_id_profile');
+        $sql = "SELECT * FROM user";
+
+        return $this->db->query($sql)->row_array();
+    }
+
+    //proses edit
+    public function updateprofile($upload)
+    {
+        $this->session->set_userdata('sess_foto',$upload['file']['file_name']);
+        $id_user = $this->input->post('id_user');
+        
+        // updae data di akun_profile 
+        $dataProfile = array(
+            'photo'  => $upload ['file']['file_name']
+        );
+        $this->db->where('id_user',$id_user);
+        $this->db->update('user', $dataProfile);
+
+        $data = [
+           
+            'full_name'           => $this->input->post('full_name',true),
+            'username'            => $this->input->post('username',true),
+            'email'               => $this->input->post('email',true),
+            'telp'                => $this->input->post('telp',true),
+        ];
+
+
+        $this->db->where('id_user', $id_user);
+        $this->db->update('user', $data);
+
+        //flashdata 
+        $msg = '<div class="alert alert-info">Profile berhasil  diperbarui <br><small>Pada tanggal ' . date('d F Y H.i A') . '</small></div>';
+        $this->session->set_flashdata('profile', $msg);
+        //redirect
+        redirect('Admin/profile/' . $id_user);
+
+        // echo "<pre>";
+		// 	echo var_dump($data);
+		// 	echo "</pre>";
+        //Mencari eror
+        //print_r($data);
+    
+    }
+
+
+
+    //--------------  *** end  model Tabel Akun profile ****/--------------------------------------------------------//
 }
