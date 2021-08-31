@@ -23,7 +23,7 @@
                   <div class="card hovercard text-center">
                     <div class="cardheader"></div>
                     <div class="user-image">
-                      <div class="avatar"><img alt="" src="<?php echo base_url('assets/images/' . $this->session->userdata('sess_foto')) ?>"></div>
+                      <div class="avatar"><img alt="" src="<?= base_url() ?>assets/images/<?= $user["photo"]; ?>"></div>
                     </div>
                     <div class="info">
                       <div class="row">
@@ -31,19 +31,19 @@
                           <div class="row">
                             <div class="col-md-6">
                               <div class="ttl-info text-start">
-                                <h6><i class="fa fa-envelope"></i>   Email</h6><span><?= $profile['email'];?></span>
+                                <h6><i class="fa fa-envelope"></i>   Email</h6><span><?= $user['email'];?></span>
                               </div>
                             </div>
                             <div class="col-md-6">
                               <div class="ttl-info text-start">
-                                <h6><i class="fa fa-calendar"></i>   BOD</h6><span><?= date('d-M-Y',strtotime($profile['tanggal_lahir']))?></span>
+                                <h6><i class="fa fa-calendar"></i> Pembuatan Akun</h6><span><?= date('d-M-Y',strtotime($user['created_at']))?></span>
                               </div>
                             </div>
                           </div>
                         </div>
                         <div class="col-sm-12 col-lg-4 order-sm-0 order-xl-1">
                           <div class="user-designation">
-                            <div class="title"><a target="_blank" href=""><?php echo $this->session->userdata('sess_fullname') ?></a></div>
+                            <div class="title"><?= $user['username'];?></div>
                             <div class="desc mt-2"><?php echo $this->session->userdata('sess_level') ?></div>
                           </div>
                         </div>
@@ -51,19 +51,19 @@
                           <div class="row">
                             <div class="col-md-6">
                               <div class="ttl-info text-start">
-                                <h6><i class="fa fa-phone"></i>   Contact Us</h6><span><?= $profile['telp'];?></span>
+                                <h6><i class="fa fa-user"></i> Nama Panjang</h6><span><?= $user['full_name'];?></span>
                               </div>
                             </div>
                             <div class="col-md-6">
                               <div class="ttl-info text-start">
-                                <h6><i class="fa fa-location-arrow"></i>   Location</h6><span><?= $profile['name_cabang'];?></span>
+                                <h6><i class="fas fa-user-check"></i> status akun</h6><span><?= $user['status_account'];?></span>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     
-                                <a href="<?= base_url('Adminpusat/tabelakun'); ?>" class="btn btn-primary" type="submit">Back</a>
+                                <a href="<?= base_url('Admin/datauser'); ?>" class="btn btn-primary" type="submit">Back</a>
                       </div>
                     </div>
                   </div>

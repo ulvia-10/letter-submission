@@ -36,24 +36,20 @@ class Login extends CI_Controller
         $data = array(
             'namafolder' => "login",
             'namafileview' => "V_forgetpassword",
-<<<<<<< HEAD
-            'title'      => "Email Page Forget Password  | Dinas Pendidikan Jombang"
-        );
-         // templating
-         $this->load->view('templating/login/template_login', $data);
-    }
-
-    function emailforgetpassword(){
-        
-=======
             'title'         => "Forget Password Page | Dinas Pendidikan Jombang"
         );
         $this->load->view('templating/login/template_login',$data);
-        // $this->load->view('templating/template_loginheader', $data);
-        // $this->load->view('templating/template_loginfooter', $data);
->>>>>>> 1e66f8f962fe3665ea770465865c53a0107f4140
     }
 
+    function emailforgetpassword()
+    {
+        $data = array(
+            'namafolder' => "login",
+            'namafileview' => "V_email",
+            'title'         => "Email Forget Password Page | Dinas Pendidikan Jombang"
+        );
+        $this->load->view('templating/login/template_login',$data);
+    }
     // process login
 
     function processLogin()

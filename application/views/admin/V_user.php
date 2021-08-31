@@ -35,17 +35,16 @@
 								<td>
 									<!-- detail -->
 
+									
 									<a href="<?= base_url(); ?>admin/detail/<?= $akn['id_user']; ?>"
 										class="badge badge-primary">
 										<i class="fa fa-eye" aria-hidden="true"></i></a></a>
 
 
-
 									<?php   if (( $akn['level'] == 'pma' ) || ( $akn['level'] == 'pmk' ) ||  ( $akn['level'] == 'kepala_cabang' ) || ($akn['level'] == 'kasubag_tu') || ($akn['level']== 'staff') ) {?>
-									<a href="<?= base_url(); ?>Admin/edit/<?= $akn['id_user']; ?>"
-										class="badge badge-success"><i class="fa fa-edit "></i> </a>
+										<a href="<?= base_url(); ?>admin/edit/<?= $akn['id_user']; ?>"
+                                    class="badge badge-success"><i class="fa fa-edit "></i> </a>
 									<?php }?>
-
 
 									<!-- hapus -->
 									<?php   if (( $akn['level'] == 'pma' ) || ( $akn['level'] == 'pmk' ) ||  ( $akn['level'] == 'kepala_cabang' ) || ($akn['level'] == 'kasubag_tu') || ($akn['level']== 'staff') ) {?>

@@ -134,9 +134,9 @@ class Admin extends CI_Controller
             // // variable
             'user'      => $editprofile
           );
-          $this->form_validation->set_rules('full_name', 'fullName', 'trim|required');
-          $this->form_validation->set_rules('username', 'username', 'trim|required');
-          $this->form_validation->set_rules('password', 'password', 'trim|required');
+          $this->form_validation->set_rules('status_account', 'status_account', 'trim|required');
+          $this->form_validation->set_rules('full_name', 'full_name', 'trim|required');
+          $this->form_validation->set_rules('level', 'level', 'trim|required');
           $this->form_validation->set_rules('email', 'email', 'trim|required');
 
           if ($this->form_validation->run() == FALSE) {
@@ -144,7 +144,7 @@ class Admin extends CI_Controller
             $this->load->view('templating/admin/template_admin', $data);
           } else {
             // #code...
-            $this->M_admin->editdata();
+           // $this->M_admin->editdata();
           }
         }
 
@@ -166,65 +166,56 @@ class Admin extends CI_Controller
       }
 
         //--------------  *** End Data Akun ****/--------------------------------------------------------//
+
+    //******************** Start profile ********************************************************/
+     // main view tampilan profile
+     public function profile()
+     {
+       $profile =  $this->M_admin-> getproseseditProfileByID();
+       $data = array(
+   
+         'namafolder'	=> "admin",
+         'namafileview'	=> "V_editprofile.php",
+         'title'         => "Profile | Cabang Dinas Pendidikan Wilayah Jombang",
+  
+               //variabel
+               'editprofile'      => $profile
+       );
+       $this->load->view('templating/admin/template_admin', $data);
+         //print_r($data);
+         // echo "<pre>";
+         // echo var_dump($data);
+         // echo "</pre>"
+     }
+
+     //proses edit profile
+       public function proseseditprofile(){
+         $this->load->helper(array('form', 'url'));
+         $this->load->library('form_validation');
+     
+         // form validation 
+         $this->form_validation->set_rules('full_name', 'full_name', 'required');
+         $this->form_validation->set_rules('username','username','required');
+         $this->form_validation->set_rules('telp','telp','required');
+         $this->form_validation->set_rules('email','email','required');
+        
+         // redirect 
+         if ($this->form_validation->run() == FALSE){
+             echo validation_errors();
+         }
+         else{
+             $upload = $this->M_admin->upload();
+             if($upload ['result'] == 'success'){
+                 $this->M_admin->updateprofile($upload);
+                 // print_r($upload);
+                 redirect('admin/profile','refresh');
+             }else{
+                 echo $upload['error'];
+             }
+             redirect('admin/profile','refresh');  
+     }
+     }
+ 
+   //******************** End profile ********************************************************/
     
-
-    function surat()
-    {
-        $data = array(
-            'namafolder'    => "admin",
-            'namafileview'  => "V_indexadmin",
-            'title'         => "Admin Page | Cabdin Jombang"
-        );
-        $data['surat_diterima'] = $this->M_surat->getdatasuratmasukditerima();
-        $data['surat_revisi'] = $this->M_surat->getdatasuratmasukrevisi();
-        $data['surat_ditolak'] = $this->M_surat->getdatasuratmasukditolak();
-        // templating
-        $this->load->view('templating/admin/template_admin',$data);
-    }
-
-
-    
-    function suratkeluar()
-    {
-        $data = array(
-            'namafolder'    => "admin",
-            'namafileview'  => "V_suratkeluar",
-            'title'         => "Admin Page | Cabdin Jombang"
-        );
-        $data['suratkeluar_diterima'] = $this->M_surat->getdatasuratkeluarditerima();
-        $data['suratkeluar_revisi'] = $this->M_surat->getdatasuratkeluarrevisi();
-        $data['suratkeluar_ditolak'] = $this->M_surat->getdatasuratkeluarditolak();
-        // templating
-        $this->load->view('templating/admin/template_admin',$data);
-    }
-
-
-    function profile()
-    {
-        $data = array(
-            'namafolder'    => "admin",
-            'namafileview'  => "V_profile",
-            'title'         => "Admin Page | Cabdin Jombang"
-        );
-        // templating
-        $this->load->view('templating/admin/template_admin',$data);
-    }
-    function proseseditakun(){
-      
-        // set form validation
-        $this->form_validation->set_rules('full_name','full_name','required');
-        $this->form_validation->set_rules('email','email','required');
-        $this->form_validation->set_rules('level','level','required');
-        $this->form_validation->set_rules('status_account','status_account','required');
-    
-        // check process form validation 
-        if ($this->form_validation->run() == FALSE){
-            echo validation_errors();
-          }
-          else{
-                $this->M_admin->editdata();
-                redirect('superadmin/eventdonasi','refresh');
-        }
-    }
-}
-?>
+  }

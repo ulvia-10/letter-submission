@@ -7,7 +7,7 @@
         <h5>Edit Data Akun</h5> <br>
         <?php echo $this->session->flashdata('akun') ?>
     </div>
-    <form class="form theme-form" method="POST" action="<?php echo site_url('admin/proseseditakun/'.$user['id_user']);?>" >
+    <form class="form theme-form" method="POST" action="<?php echo site_url('Admin/editprofile');?>" >
         <div class="card-body">
             <div class="row">
                 <div class="col">
