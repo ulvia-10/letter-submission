@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-md-6">
                               <div class="ttl-info text-start">
-                                <h6><i class="fa fa-calendar"></i>BOD</h6><span><?= $user['status_account']?></span>
+                                <h6><i class="fa fa-calendar"></i>Akun dibuat</h6><span><?= date('d M Y',strtotime($user['created_at']))?></span>
                               </div>
                             </div>
                           </div>
