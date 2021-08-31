@@ -55,7 +55,6 @@
                         <label class="col-sm-3 col-form-label">Level</label>
                         <div class="col-sm-9">
                         <select class="form-select" name="level" id="level">
-                            <!-- <option value="admin">Admin</option> -->
                             <option value="kepala_cabang">Kepala Cabang</option>
                             <option value="kasubag_tu">Kasubag Tata Usaha</option>
                             <option value="pma">Kepala Seksi SMA</option>

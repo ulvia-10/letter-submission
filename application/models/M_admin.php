@@ -96,17 +96,16 @@ class M_admin extends CI_Model
         $msg = '<div class="alert alert-info">Akun berhasil  diperbarui <br><small>Pada tanggal ' . date('d F Y H.i A') . '</small></div>';
         $this->session->set_flashdata('akun', $msg);
         //redirect
-        redirect('admin/edit/' . $id_user);
+        redirect('admin/datauser/');
     }
 
      //Detail  Informasi Akun mengambil id_profile pada saat edit profile
      public function getEditProfileByID($id_user)
      {
- 
-    
-         $sql = "SELECT * FROM user";
- 
+
+         $sql = "SELECT * FROM user WHERE id_user= '$id_user'";
          return $this->db->query($sql)->row_array();
+         
      }
 
      //detail akun

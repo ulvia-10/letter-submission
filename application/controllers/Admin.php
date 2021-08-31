@@ -223,7 +223,7 @@ class Admin extends CI_Controller
           }
           else{
                 $this->M_admin->editdata();
-                redirect('superadmin/eventdonasi','refresh');
+                redirect('admin/datauser','refresh');
         }
     }
 }

@@ -19,7 +19,7 @@
 								<th>Nama</th>
 								<th>Username</th>
 								<th>Level</th>
-								<th>Email</th>
+								<th>Status Account</th>
 								<th>Action</th>
 							</tr>
 						</thead>
@@ -31,9 +31,24 @@
 								<td><?= $akn["full_name"]; ?></td>
 								<td><?= $akn["username"]; ?></td>
 								<td><span class="badge badge-info"><?=$akn["level"];?></span></td>
-								<td><?= $akn["email"]; ?></td>
+								<?php
+														$keterangan = "";
+														$warna = "";
+
+														if ( $akn['status_account'] == "active" ) {
+
+															$keterangan = "active";
+															$warna      = "success";
+														} else if ( $akn['status_account'] == "inactive" ) {
+
+															$keterangan = "inactive";
+															$warna = "primary";
+														} 
+														?>
+												<td> <span class="badge badge-<?php echo $warna ?>">
+														<?php echo $keterangan?></span></td>
+								<!-- <td><?= $akn["status_account"]; ?></td> -->
 								<td>
-									<!-- detail -->
 
 									<a href="<?= base_url(); ?>admin/detail/<?= $akn['id_user']; ?>"
 										class="badge badge-primary">
@@ -41,14 +56,14 @@
 
 
 
-									<?php   if (( $akn['level'] == 'pma' ) || ( $akn['level'] == 'pmk' ) ||  ( $akn['level'] == 'kepala_cabang' ) || ($akn['level'] == 'kasubag_tu') || ($akn['level']== 'staff') ) {?>
+									<?php   if (( $akn['level'] == 'pma' ) || ( $akn['level'] == 'pmk' ) ||  ( $akn['level'] == 'kepala_cabang' ) || ($akn['level'] == 'kasubag_tu') || ($akn['level']== 'staf') ) {?>
 									<a href="<?= base_url(); ?>Admin/edit/<?= $akn['id_user']; ?>"
 										class="badge badge-success"><i class="fa fa-edit "></i> </a>
 									<?php }?>
 
 
 									<!-- hapus -->
-									<?php   if (( $akn['level'] == 'pma' ) || ( $akn['level'] == 'pmk' ) ||  ( $akn['level'] == 'kepala_cabang' ) || ($akn['level'] == 'kasubag_tu') || ($akn['level']== 'staff') ) {?>
+									<?php   if (( $akn['level'] == 'pma' ) || ( $akn['level'] == 'pmk' ) ||  ( $akn['level'] == 'kepala_cabang' ) || ($akn['level'] == 'kasubag_tu') || ($akn['level']== 'staf') ) {?>
 									<a href="#" data-bs-toggle="modal"
 										data-bs-target="#aksi-hapus-<?php echo $akn['id_user'] ?>"
 										class="badge badge-danger "> <i class="fa fa-trash" aria-hidden="true"></i></a>

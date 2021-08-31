@@ -26,7 +26,7 @@
 						<div class="tab-pane fade show active" id="pills-clrhome1" role="tabpanel"
 							aria-labelledby="pills-clrhome-tab1">
 							<?php echo $this->session->flashdata('pesan') ?>
-							<a href="<?= base_url(); ?>keuangan/tambahbuktikaskorwil/"
+							<a href="<?= base_url(); ?>surat/tambahsurat/"
 								class="btn btn-primary btn-sm mb-3">
 								<i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a> <br>
 							<table class="display" id="basic-3" style="text-align:center;">
