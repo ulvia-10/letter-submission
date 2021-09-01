@@ -115,7 +115,7 @@ class Login extends CI_Controller
                             break;
 
                         case 'super_admin';
-                            redirect('superadmin');
+                            redirect('Superadmin');
                             break;
                         }
                   

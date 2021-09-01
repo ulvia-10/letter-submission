@@ -61,7 +61,7 @@
                         <div class="col-sm-6 col-md-3">
                           <div class="mb-3">
                             <label class="form-label" id="username">Username</label>
-                            <input class="form-control" type="text" placeholder="Isikan Username" name="username" value="<?= $editprofile['username']; ?>" id="username" required="">
+                            <input class="form-control" type="text" placeholder="Isikan Username" name="username" readonly value="<?= $editprofile['username']; ?>" id="username" required="">
                             <div class="invalid-feedback">Username Masih Kosong</div>
                           </div>
                         </div>

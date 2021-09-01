@@ -17,9 +17,9 @@ class M_superadmin extends CI_Model
 
     public function getEditProfileByID($id_user)
     {
-        $sql = "SELECT * FROM user";
-
-        return $this->db->query($sql)->row_array();
+        $sql = "SELECT * FROM user WHERE id_user= '$id_user'";
+         return $this->db->query($sql)->row_array();
+         
     }
 
 

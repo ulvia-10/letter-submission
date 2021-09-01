@@ -215,7 +215,70 @@ class Admin extends CI_Controller
              redirect('admin/profile','refresh');  
      }
      }
- 
    //******************** End profile ********************************************************/
+
+     //******************** Surat masuk ********************************************************/
+     function surat()
+    {
+        $data = array(
+            'namafolder'    => "admin",
+            'namafileview'  => "V_suratmasuk",
+            'title'         => "Surat Masuk| Cabdin Jombang"
+        );
+
+        $data['surat_diterima'] = $this->M_admin->datasurat("diterima");
+        $data['surat_draft'] = $this->M_admin->datasurat("draft");
+        $data['surat_revisi'] = $this->M_admin->datasurat("revisi");
+        // templating
+        $this->load->view('templating/admin/template_admin',$data);
+    }
+
+     //Tampilan tabel Tambah surat diterima,di draft dan di revisi
+     public function tambahSuratmasuk()
+     {
+        
+         $data = array(
+ 
+             'namafolder'    => "admin",
+             'namafileview'    => "V_tambahSuratmasuk",
+             'title'         => " tambah surat masuk | cabdin Jombang",
+ 
+         );
+         $this->load->view('templating/admin/template_admin',$data);
+     }
+ 
+     //proses tabel tambah surat masuk diterima , di draft dan di revisi
+     function prosesTambahsurat()
+     {
+         // print_r( $this->input->post() );
+         $this->load->helper(array('form', 'url'));
+         $this->load->library('form_validation');
+ 
+         $this->form_validation->set_rules('surat_dari', 'surat_dari', 'required');
+         $this->form_validation->set_rules('tgl_surat', 'tgl_surat', 'required');
+         $this->form_validation->set_rules('no_surat', 'no_surat', 'required');
+         $this->form_validation->set_rules('tgl_diterima', 'tgl_diterima', 'required');
+        // $this->form_validation->set_rules('no_agenda', 'no_agenda', 'required');
+         $this->form_validation->set_rules('sifat', 'sifat', 'required');
+         $this->form_validation->set_rules('perihal', 'perihal', 'required');
+        // $this->form_validation->set_rules('isi_disposisi', 'isi_disposisi', 'required');
+         $this->form_validation->set_rules('jenis_surat', 'jenis_surat', 'required');
+         $this->form_validation->set_rules('status', 'status', 'required');
+         $this->form_validation->set_rules('diteruskan', 'diteruskan', 'required');
+ 
+ 
+         if ($this->form_validation->run() == FALSE) {
+             // $this->tambah kegiatan;
+             echo validation_errors();
+         } else {
+ 
+             // kirim data ke model 
+             $this->M_admin->tambahSuratmasuk();
+         }
+     }
+
+
+
+       //******************** End surat masuk ********************************************************/
     
   }
