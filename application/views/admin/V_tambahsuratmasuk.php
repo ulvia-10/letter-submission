@@ -24,12 +24,12 @@
                 </div>
                 <div class="card-body add-post">
                     <form class="row needs-validation"
-                        action="<?php echo base_url('Admin/prosesTambahsurat') ?>" method="POST"
+                        action="<?php echo base_url('admin/prosesTambahsurat') ?>" method="POST"
                         enctype="multipart/form-data">
                         <div class="col-sm-12">
                             <div class="mb-3">
                                 <label for="surat_dari">Surat Dari : </label>
-                                <input class="form-control" name="surat_dari" id="surat_dari" type="text" placeholder="Isikan suratdari"
+                                <input class="form-control" name="surat_dari" id="surat_dari" type="text" placeholder="Isikan surat dari"
                                     required="">
                             </div>
 
@@ -127,18 +127,7 @@
                                     </div>
                                 </div>
 
-                           
-
-                                <!-- <div class="email-wrapper">
-                                    <div class="theme-form">
-                                        <div class="mb-3">
-                                            <label>Isi Berita:</label>
-                                            <textarea  name="textbox" cols="10" rows="2"></textarea>
-                                        </div>
-                                    </div>
-                                </div> -->
-                            
-
+    
 
                     </form>
                     <div class="btn-showcase">

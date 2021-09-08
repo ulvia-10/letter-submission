@@ -182,10 +182,7 @@ class Admin extends CI_Controller
                'editprofile'      => $profile
        );
        $this->load->view('templating/admin/template_admin', $data);
-         //print_r($data);
-         // echo "<pre>";
-         // echo var_dump($data);
-         // echo "</pre>"
+
      }
 
      //proses edit profile
@@ -215,7 +212,11 @@ class Admin extends CI_Controller
              redirect('admin/profile','refresh');  
      }
      }
+
    //******************** End profile ********************************************************/
+
+
+
 
      //******************** Surat masuk ********************************************************/
      function surat()
@@ -223,7 +224,7 @@ class Admin extends CI_Controller
         $data = array(
             'namafolder'    => "admin",
             'namafileview'  => "V_suratmasuk",
-            'title'         => "Surat Masuk| Cabdin Jombang"
+            'title'         => "Surat Masuk | Cabdin Jombang"
         );
 
         $data['surat_diterima'] = $this->M_admin->datasurat("diterima");
@@ -240,7 +241,7 @@ class Admin extends CI_Controller
          $data = array(
  
              'namafolder'    => "admin",
-             'namafileview'    => "V_tambahSuratmasuk",
+             'namafileview'    => "V_tambahsuratmasuk",
              'title'         => " tambah surat masuk | cabdin Jombang",
  
          );
@@ -258,10 +259,8 @@ class Admin extends CI_Controller
          $this->form_validation->set_rules('tgl_surat', 'tgl_surat', 'required');
          $this->form_validation->set_rules('no_surat', 'no_surat', 'required');
          $this->form_validation->set_rules('tgl_diterima', 'tgl_diterima', 'required');
-        // $this->form_validation->set_rules('no_agenda', 'no_agenda', 'required');
          $this->form_validation->set_rules('sifat', 'sifat', 'required');
          $this->form_validation->set_rules('perihal', 'perihal', 'required');
-        // $this->form_validation->set_rules('isi_disposisi', 'isi_disposisi', 'required');
          $this->form_validation->set_rules('jenis_surat', 'jenis_surat', 'required');
          $this->form_validation->set_rules('status', 'status', 'required');
          $this->form_validation->set_rules('diteruskan', 'diteruskan', 'required');
@@ -271,14 +270,52 @@ class Admin extends CI_Controller
              // $this->tambah kegiatan;
              echo validation_errors();
          } else {
- 
              // kirim data ke model 
              $this->M_admin->tambahSuratmasuk();
          }
      }
 
+     public function editsuratmasuk()
+     {
+        
+         $data = array(
+ 
+             'namafolder'    => "admin",
+             'namafileview'    => "V_editsurat",
+             'title'         => " Edit Surat Masuk  | cabdin Jombang",
+ 
+         );
+         $this->load->view('templating/admin/template_admin',$data);
+     }
+
+     public function prosesEditSuratMasuk(){
+
+      $this->load->helper(array('form', 'url'));
+      $this->load->library('form_validation');
+
+      
+      $this->form_validation->set_rules('surat_dari', 'surat_dari', 'required');
+      $this->form_validation->set_rules('tgl_surat', 'tgl_surat', 'required');
+      $this->form_validation->set_rules('no_surat', 'no_surat', 'required');
+      $this->form_validation->set_rules('tgl_diterima', 'tgl_diterima', 'required');
+      $this->form_validation->set_rules('sifat', 'sifat', 'required');
+      $this->form_validation->set_rules('perihal', 'perihal', 'required');
+      $this->form_validation->set_rules('jenis_surat', 'jenis_surat', 'required');
+      $this->form_validation->set_rules('status', 'status', 'required');
+      $this->form_validation->set_rules('diteruskan', 'diteruskan', 'required');
+
+     }
 
 
-       //******************** End surat masuk ********************************************************/
+
+      
+     
+     
+     
+     
+     
+     
+     
+     //******************** End surat masuk ********************************************************/
     
   }

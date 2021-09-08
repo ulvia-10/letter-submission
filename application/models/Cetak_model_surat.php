@@ -4,10 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cetak_model_surat extends CI_Model {
     public function view(){
 
-        // // Opsi 2 
-        // $SQL = "SELECT a.id_siswa,a.nama,b.id_transaksi,b.tgl_bayar,b.status FROM siswa a JOIN transaksi b ON a.id_siswa = b.id_siswa";
-        // $query = $this->db->query( $SQL );
-
+        $query="SELECT * FROM surat";
+        return $this->db->query($query);
         // return $query->result();
 
     }

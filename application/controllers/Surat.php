@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Superadmin extends CI_Controller
+class Surat extends CI_Controller
 {
   
     function __construct()
@@ -31,12 +31,19 @@ class Superadmin extends CI_Controller
     }
 
 
-    function printsurat(){
+    function cetaksurat($id_surat){
         $this->load->library('pdf_surat');
-        $data['surat'] = $this->Cetak_model_surat->view();
+
+        $data = array(
+            'namafolder'    => "admin",
+            'namafileview'  => "V_surat",
+            'title'         => "Admin Page | Cabdin Jombang"
+        );
+        $this->load->view('templating/admin/template_admin',$data);
+        $data['surat'] = $this->M_surat->getdatasuratmasukditerima();
         $this->pdf_pembayaran->setPaper('A4', 'portrait');
-        $this->pdf_pembayaran->filename = "Surat.pdf";
-        $this->pdf_pembayaran->load_view("admin/V_surat",$data);
+        $this->pdf_pembayaran->set_option('isRemoteEnabled', TRUE);
+        $this->pdf_pembayaran->filename = "Surat.pdf";   
     }
 
 

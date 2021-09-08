@@ -219,7 +219,7 @@ class M_admin extends CI_Model
             // 52 kb
 
             $config['upload_path']          = './assets/datapenting/'; // direktori lokal
-            $config['allowed_types']        = 'jpeg|jpg|png|pdf|doc'; // ekstensi
+            $config['allowed_types']        = 'jpeg|jpg|png|pdf|docx|doc'; // ekstensi
             $config['max_size']             = 3000; // 3 mb
 
             $this->load->library('upload', $config);
@@ -272,6 +272,8 @@ class M_admin extends CI_Model
             'status'    => $status,
             'namaberkas'  => $upload,
         );
+
+    
          $this->db->insert('surat', $data);
         
          $id_surat = $this->db->insert_id();
@@ -295,13 +297,6 @@ class M_admin extends CI_Model
             $this->db->insert('tbl_notif', $notif);
         }
         }
-        
-            
-        
-         // execute
-       
-
-        // //flashdata 
         
 
         $pesan = '<div class="alert alert-info">Data Kegiatan Berhasil Disimpan! </div>';

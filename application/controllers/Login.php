@@ -107,7 +107,7 @@ class Login extends CI_Controller
                             break;
 
                         case 'staf':
-                            echo "Hi Admin";
+                            redirect('staf');
                             break;
 
                         case 'admin':
@@ -115,7 +115,7 @@ class Login extends CI_Controller
                             break;
 
                         case 'super_admin';
-                            redirect('Superadmin');
+                            redirect('superadmin');
                             break;
                         }
                   

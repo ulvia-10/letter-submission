@@ -19,6 +19,12 @@ class M_surat extends CI_Model
         return $this->db->query($sql)->result_array();
       
     }
+    
+    function getsuratbyId($id_surat){
+        $sql="SELECT * FROM surat WHERE id_surat = '$id_surat'";
+        return $this->db->query($sql)->row_array();
+    }
+
     function getdatasuratmasukrevisi()
     {
         $sql="SELECT * FROM surat WHERE validasi_surat='revisi'AND gol_surat='masuk'";
